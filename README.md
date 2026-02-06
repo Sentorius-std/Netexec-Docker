@@ -76,7 +76,6 @@ In case the user tested is not a Local Admin :
 <img width="644" height="148" alt="image" src="https://github.com/user-attachments/assets/61c080ce-6fe6-4d1f-a1bf-bfcd7a0d1ecc" />
 
 <br>
-
 If an error occurs:
 
 ```json
