@@ -42,6 +42,7 @@ docker run --rm \
 ## Volumes explanation
 
 **/output** :	Stores logs and JSON results outside the container
+
 **/data**	: Persistent NetExec home (avoids first-time initialization every run)
 
 <br>
