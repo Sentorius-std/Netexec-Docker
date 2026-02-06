@@ -57,7 +57,7 @@ EOF
     exit 4
 fi
 
-# This is Why it took some times, parsing the output to simulate a bit auditguard format (Look Like json)
+# This is Why it took some time, parsing the output to simulate a bit auditguard format (Look Like json)
 while read -r line; do
     # Detect host info line
     echo "$line" >> $LOG_FILE
