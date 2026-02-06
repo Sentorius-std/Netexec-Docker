@@ -1,0 +1,4 @@
+output/
+nxc_home/
+*.log
+*.json
