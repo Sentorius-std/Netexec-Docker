@@ -63,7 +63,7 @@ Example JSON:
   "ip": "10.10.128.3",
   "hostname": "LOCAL",
   "compromised": true,
-  "creds": "Local\\Administrator:Password123"
+  "creds": "Local\\Administrator:Valinnov@2026"
 }
 ```
 <img width="619" height="155" alt="image" src="https://github.com/user-attachments/assets/0b1b7313-b948-47e6-8517-49e09319f92a" />
