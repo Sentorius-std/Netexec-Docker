@@ -66,7 +66,6 @@ Example JSON:
 }
 ```
 <img width="619" height="155" alt="image" src="https://github.com/user-attachments/assets/0b1b7313-b948-47e6-8517-49e09319f92a" />
-
 <br>
 
 In case the user tested is not a Local Admin :
@@ -74,8 +73,8 @@ In case the user tested is not a Local Admin :
 <br>
 
 <img width="644" height="148" alt="image" src="https://github.com/user-attachments/assets/61c080ce-6fe6-4d1f-a1bf-bfcd7a0d1ecc" />
-
 <br>
+
 If an error occurs:
 
 ```json
