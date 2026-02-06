@@ -50,9 +50,9 @@ docker run --rm \
 
 After each run, two files are created in /output:
 
-* scan_DATE.log → Full NetExec output
+* **scan_DATE.log** → Full NetExec output
 
-* scan_DATE.json → Parsed result for automation
+* **scan_DATE.json** → Parsed result for automation
   
 Example JSON:
 
