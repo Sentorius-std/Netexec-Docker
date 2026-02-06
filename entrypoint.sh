@@ -46,7 +46,7 @@ PWNED="false"
 CREDS=""
 
 
-# If NetExec produced Empty output (Same times if port is closed or the machine is off, netexec return nothing)
+# If NetExec produced Empty output (Some times if the port is not open or the machine is off, netexec return nothing)
 if [ -z "$OUTPUT" ]; then
 cat <<EOF > "$JSON_FILE"
 {
