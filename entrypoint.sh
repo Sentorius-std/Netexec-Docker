@@ -11,6 +11,7 @@ NC='\033[0m' # No Color
 
 mkdir -p /data
 
+#Here we saved both json format and log one 
 TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
 LOG_FILE="/output/scan_${TIMESTAMP}.log"
 JSON_FILE="/output/scan_${TIMESTAMP}.json"
@@ -22,17 +23,18 @@ fi
 
 echo -e "${BLUE}[*]${NC} Running NetExec with arguments: $@" | tee "$LOG_FILE"
 
-# Run and capture output
+# Running and capturing NetExec output
 OUTPUT=$(netexec "$@" 2>&1)
 STATUS=$?
 
 echo "$OUTPUT" | tee -a "$LOG_FILE"
 
-# If tool crashed
+# If tool crashed or something goes wrong
 if [ $STATUS -ne 0 ]; then
     echo "{\"result\":\"error\",\"exit_code\":$STATUS}" > "$JSON_FILE"
     exit 4
 fi
+
 
 # --- PARSING PART ---
 
@@ -44,7 +46,7 @@ PWNED="false"
 CREDS=""
 
 
-# If NetExec produced no output at all
+# If NetExec produced Empty output (Same times if port is closed or the machine is off, netexec return nothing)
 if [ -z "$OUTPUT" ]; then
 cat <<EOF > "$JSON_FILE"
 {
@@ -55,7 +57,7 @@ EOF
     exit 4
 fi
 
-
+# This is Why it took some times, parsing the output to simulate a bit auditguard format (Look Like json)
 while read -r line; do
     # Detect host info line
     echo "$line" >> $LOG_FILE
@@ -71,7 +73,6 @@ while read -r line; do
         CREDS=$(echo "$line" | grep -oP '\S+:\S+(?= \(Pwn3d!\))')
     fi
     
-    # Detect successful auth line (starts with [+])
     # Detect successful auth line
     case "$line" in
        *"[+]"*)
@@ -83,7 +84,7 @@ done <<< "$OUTPUT"
 
 
 
-# Build single JSON object
+# Finally Buildibg single JSON object
 cat <<EOF > "$JSON_FILE"
 {
   "protocol": "$PROTO",
