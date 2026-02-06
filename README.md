@@ -17,13 +17,18 @@ This container allows you to run NetExec without installing it on the host, whil
 * Docker installed
 
 * Internet access (first build only)
+
 <br>
+
 ## Build the image
+
 
 ```bash
 docker build -t netexec-docker .
 ```
+
 <br>
+
 ## Running a script
 
 ```bash
@@ -33,12 +38,14 @@ docker run --rm \
   netexec-docker smb 10.10.10.0/24
 ```
 <br>
+
 ## Volumes explanation
 
 **/output** :	Stores logs and JSON results outside the container
 **/data**	: Persistent NetExec home (avoids first-time initialization every run)
 
 <br>
+
 ## Output files
 
 After each run, two files are created in /output:
@@ -59,6 +66,7 @@ Example JSON:
 }
 ```
 <img width="619" height="155" alt="image" src="https://github.com/user-attachments/assets/0b1b7313-b948-47e6-8517-49e09319f92a" />
+<br>
 
 In case the user tested is not a Local Admin :
 <br>
